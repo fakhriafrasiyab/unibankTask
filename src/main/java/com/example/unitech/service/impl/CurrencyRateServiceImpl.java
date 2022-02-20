@@ -4,6 +4,7 @@ import com.example.unitech.entity.Currency;
 import com.example.unitech.exception.CurrencyNotFoundException;
 import com.example.unitech.repository.CurrencyRepository;
 import com.example.unitech.service.CurrencyRateService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class CurrencyRateServiceImpl implements CurrencyRateService {
     }
 
     @Override
+    @Cacheable(value = "currency", key = "#currencyRate")
     public Currency getCurrencyByRate(String currencyRate) {
         //mockCurrencies() run it first to store to db
         Optional<Currency> currency = currencyRepository.findByCurrencyRate(currencyRate);

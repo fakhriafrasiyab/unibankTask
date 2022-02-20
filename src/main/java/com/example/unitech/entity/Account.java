@@ -1,6 +1,7 @@
 package com.example.unitech.entity;
 
 import com.example.unitech.entity.enums.AccountStatus;
+import lombok.Builder;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -16,6 +17,7 @@ import javax.persistence.Table;
 import java.math.BigInteger;
 
 @Entity
+@Builder
 @Table(name = "account")
 public class Account {
     @Id
