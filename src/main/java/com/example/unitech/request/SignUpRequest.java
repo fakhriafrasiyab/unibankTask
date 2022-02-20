@@ -1,0 +1,23 @@
+package com.example.unitech.request;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class SignUpRequest {
+
+    @NotBlank
+    private String pin;
+
+    @NotBlank
+    @Size(min = 6, max = 40)
+    private String password;
+}
