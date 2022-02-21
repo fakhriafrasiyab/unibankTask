@@ -2,7 +2,6 @@ package com.example.unitech.service;
 
 import com.example.unitech.entity.Currency;
 import com.example.unitech.exception.CurrencyNotFoundException;
-import com.example.unitech.exception.SameAccountException;
 import com.example.unitech.repository.CurrencyRepository;
 import com.example.unitech.service.impl.CurrencyRateServiceImpl;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "a5fbc07a-72b6-428b-b281-d35338d0cfc5",
+		"name": "unibank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pin\":\"10111222\",\n    \"password\":1011121357\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/auth/signUp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"auth",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pin\":\"10111222\",\n    \"password\":1011121357\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/auth/signIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"auth",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active Accounts By User Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDExMTIyMCIsImlhdCI6MTY0NTI4MDYyMCwiZXhwIjoxNjQ1MzY3MDIwfQ.fbyUVOtfT2cFzs9PoaJfkMr_oKIxWcnpDQFyJeZa9kLiK_Iu2NpDqbMtVqkMbVgYE69kXEOzR1gnyEFs7LhTHQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/accounts/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"accounts",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer from account to account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDExMTIyMiIsImlhdCI6MTY0NTI4MzA4NSwiZXhwIjoxNjQ1MzY5NDg1fQ.0HkOmAnW4A87rAKQLfKJ43WkcVcp_aXM2Vzt7z0WMK7kBGFVQcBxDEtDbTeQZ9R3lQ2cC1UvktiELNkcmUti3Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\":14,\n    \"transferAmount\":100,\n    \"accountIds\":[44, 34]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/accounts/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"accounts",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Currency Rate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDExMTIyMiIsImlhdCI6MTY0NTMzNzc4MSwiZXhwIjoxNjQ1NDI0MTgxfQ.K3BpWxxaCboVA2Zlyhg6hAT4Wq5em6JJzb0cmEQjzijkHIgKtI9cEGmasxbVn3boxdWCjLetNj-vAhjnhxTcuw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/currency?currencyRate=1.7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"currency"
+					],
+					"query": [
+						{
+							"key": "currencyRate",
+							"value": "1.7"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
